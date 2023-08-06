@@ -1,8 +1,8 @@
 NAME = Minishell
 CC = cc
 RM = rm -f
-LIBS = -lreadline -L/Users/mokhalil/goinfre/Homebrew/Cellar/readline/8.2.1/lib
-CFLAGS = -Wall -Wextra -Werror -g3 ${sanitize} -I /Users/mokhalil/goinfre/Homebrew/Cellar/readline/8.2.1/include
+LIBS = -lreadline -L/Users/iszitoun/goinfre/Homebrew/Cellar/readline/8.2.1/lib
+CFLAGS = -Wall -Wextra -Werror -g3 ${sanitize} -I /Users/iszitoun/goinfre/Homebrew/Cellar/readline/8.2.1/include
 src = main.c\
 		utils.c\
 		parssing.c\

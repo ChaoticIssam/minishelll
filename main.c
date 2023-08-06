@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:37 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/06 17:50:24 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:16:30 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,14 @@ int	main(int ac, char **av, char **env)
 		int_main_before(main);
 		check_bill(main->tmp, main->senv, ev);
 		print_before_pipe(main);
-		int_main_after(main);
-		check_bill(main->tmp, main->senv, ev);
-		print_after_pipe(main);
-		free(main->line);
+		while (main->i < count_pipe(main->list))
+		{
+			int_main_after(main);
+			check_bill(main->tmp, main->senv, ev);
+			print_after_pipe(main);
+		}
 		multiple_pipe(&main->m, &ev, main->list);
+		free(main->line);
 		re_vars(main);
 	}
 }

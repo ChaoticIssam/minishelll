@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   multiple_pipe.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 03:00:00 by mokhalil          #+#    #+#             */
-/*   Updated: 2023/08/06 18:32:04 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:16:47 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,6 @@ void	heredoc(t_commandes **c, t_varint *l, char *list)
 		else
 			i++;
 	}
-	printf("khrjna\n");
 	return ;
 }
 

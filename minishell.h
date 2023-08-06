@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:49 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/06 18:20:35 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:14:01 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <signal.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <sys/ioctl.h>
 # include <sys/stat.h>
 # include <sys/types.h>
@@ -29,10 +30,11 @@
 # include <termios.h>
 # include <unistd.h>
 
-typedef struct EnvVar {
-    char* value;
-    struct EnvVar* next;
-} envar;
+typedef struct EnvVar
+{
+	char				*value;
+	struct EnvVar		*next;
+}						envar;
 
 typedef struct s_mal
 {
@@ -265,7 +267,7 @@ void					my_free(void *address);
 void					my_free_all(void);
 void					ft_memset(void *pointer, int c, size_t len);
 void					*ft_memcpy(void *destination, void *source, size_t len);
-envar	*get_env(envar *head,char **env);
-void	multiple_pipe(t_commandes **c, envar **ev, char *list);
+envar					*get_env(envar *head, char **env);
+void					multiple_pipe(t_commandes **c, envar **ev, char *list);
 
 #endif

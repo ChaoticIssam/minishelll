@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:05:34 by buyt_mkh7         #+#    #+#             */
-/*   Updated: 2023/08/06 18:26:29 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:13:52 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <readline/readline.h>
 # include <signal.h>
 # include <stdio.h>
+# include <string.h>
 # include <stdlib.h>
 # include <sys/ioctl.h>
 # include <sys/stat.h>
