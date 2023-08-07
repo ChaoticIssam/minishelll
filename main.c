@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:37 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/06 21:16:30 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/07 07:29:51 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,7 @@ int	main(int ac, char **av, char **env)
 		int_main_before(main);
 		check_bill(main->tmp, main->senv, ev);
 		print_before_pipe(main);
-		while (main->i < count_pipe(main->list))
-		{
-			int_main_after(main);
-			check_bill(main->tmp, main->senv, ev);
-			print_after_pipe(main);
-		}
+		do_after_pipe(main, ev);
 		multiple_pipe(&main->m, &ev, main->list);
 		free(main->line);
 		re_vars(main);

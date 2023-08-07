@@ -5,12 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 13:40:52 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/05 22:50:46 by iszitoun         ###   ########.fr       */
+/*   Created: 2023/08/07 06:50:29 by iszitoun          #+#    #+#             */
+/*   Updated: 2023/08/07 07:16:52 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+void	fill_the_rest2(t_tokenz *m, char *str)
+{
+	if (str[m->i] == ' ' || str[m->i] == '\t' || str[m->i] == '\v')
+		m->array[m->j] = '2';
+	else if (str[m->i] == '"')
+	{
+		if (str[m->i - 1] == '=')
+			m->array[m->j - 1] = '@';
+		dquotes_tokenz(m, str);
+	}
+	else if (str[m->i] == '\'')
+	{
+		if (str[m->i - 1] == '=')
+			m->array[m->j - 1] = '@';
+		squotes_tokenz(m, str);
+	}
+	else if (str[m->i] == '=' && str[m->i + 1] != ' ')
+		m->array[m->j] = '@';
+	else if (str[m->i])
+		m->array[m->j] = '1';
+}
 
 void	fill_the_rest(t_tokenz *m, char *str)
 {
@@ -28,29 +50,8 @@ void	fill_the_rest(t_tokenz *m, char *str)
 		m->i--;
 		m->j--;
 	}
-	fill_the_rest2(m, str);
-}
-
-void	fill_the_rest2(t_tokenz *m, char *str)
-{
-	if (str[m->i] == '"')
-	{
-		if (str[m->i - 1] == '=')
-			m->array[m->j - 1] = '@';
-		dquotes_tokenz(m, str);
-	}
-	else if (str[m->i] == '\'')
-	{
-		if (str[m->i - 1] == '=')
-			m->array[m->j - 1] = '@';
-		squotes_tokenz(m, str);
-	}
-	else if (str[m->i] == ' ' || str[m->i] == '\t' || str[m->i] == '\v')
-		m->array[m->j] = '2';
-	else if (str[m->i] == '=' && str[m->i + 1] != ' ')
-		m->array[m->j] = '@';
-	else if (str[m->i])
-		m->array[m->j] = '1';
+	else
+		fill_the_rest2(m, str);
 }
 
 void	var_def(t_tokenz *m, char *str, int i, int j)
@@ -63,6 +64,7 @@ void	var_def(t_tokenz *m, char *str, int i, int j)
 		m->i = i;
 		m->j = j;
 	}
+	m->j = 0;
 	m->count = 0;
 	m->array = calloc(sizeof(char), ft_strlen(str) + 1);
 }
@@ -71,7 +73,7 @@ char	*toknz_list(char *str, int i, int j)
 {
 	t_tokenz	*m;
 
-	m = my_malloc(sizeof(t_tokenz));
+	m = malloc(sizeof(t_tokenz));
 	var_def(m, str, i, j);
 	while (str[m->i] && m->i + 1 <= ft_strlen(str))
 	{

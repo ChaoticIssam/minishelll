@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:49 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/06 21:14:01 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/07 07:11:24 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,8 @@ t_files					*ft_lstnew_files(void *content);
 void					int_main(t_main *main);
 void					int_main_before(t_main *main);
 void					int_main_after(t_main *main);
+void					print_after_pipe(t_main *main);
+void					do_after_pipe(t_main *main, envar *ev);
 
 void					done_normal(t_commandes *tmp, t_env *senv, envar *env,
 							t_bill *bill);

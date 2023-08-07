@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 10:26:12 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/05 21:23:55 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/07 07:10:29 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,15 @@ void	int_sig_main(t_main *main)
 	main->term.c_lflag &= ~ISIG;
 	main->term.c_lflag &= ~ECHOCTL;
 	tcsetattr(0, TCSANOW, &main->term);
+}
+
+void	do_after_pipe(t_main *main, envar *ev)
+{
+	while (main->i < count_pipe(main->list))
+	{
+		int_main_after(main);
+		check_bill(main->tmp, main->senv, ev);
+		print_after_pipe(main);
+		main->i++;
+	}
 }
