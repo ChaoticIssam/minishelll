@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 22:58:59 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/03 10:25:48 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/10 16:07:32 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_strlen(char *str)
 
 void	ft_putstr(char *str)
 {
-	printf("%s", str);
+	printf("(%s)", str);
 }
 
 char	*ft_strjoin(char *s1, char *s2)

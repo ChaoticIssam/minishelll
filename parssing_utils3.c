@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 11:56:04 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/05 21:25:56 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/10 16:20:53 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	start_stop(char *list, t_commande *s, int i)
 	if (((list[i] != s->tmp) || list[i + 1] == '6' || !list[i + 1])
 		&& !ft_isredi(list[i]))
 		get_end(s, i, list);
-	if ((list[i] == '1') && list[i] != '3' && s->lock && list[i + 1]
+	if ((list[i] == '1') && list[i] != '3' && list[i] != '2' && s->lock && list[i + 1]
 		&& !ft_isredi(list[i]))
 		get_start(s, i, list);
 	if (i != 0 && i + 1 <= ft_strlen(list) && list[i] == '1' && list[i
@@ -56,7 +56,7 @@ int	for_quotes(char *list, t_commande *s, char *str, int i)
 void	rest_of_parss(char *list, char *str, t_commande *s, int i)
 {
 	if (!s->lock1 && list[i] != '3' && str[s->start] != '"'
-		&& str[s->start] != '\'' && s->end >= s->start && !ft_isredi(list[i]))
+		&& str[s->start] != '\'' && str[s->start] != ' ' && s->end >= s->start && !ft_isredi(list[i]))
 		get_commande(s, str);
 	if (list[i] == '2' && list[i + 1] == '2' && !ft_isredi(list[i]))
 		skip_sp(s, list, i);

@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 07:38:18 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/04 17:01:49 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/10 16:23:21 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	get_end(t_commande *s, int i, char *list)
 		s->end = i;
 	s->lock1 = 0;
 	s->lock = 1;
+	if (list[i] == '2')
+		s->end = i - 1;
 	if (i + 1 <= ft_strlen(list) && list[i + 1] == '6')
 	{
 		s->end = i;
