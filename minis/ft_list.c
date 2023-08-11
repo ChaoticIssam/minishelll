@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 05:23:13 by buyt_mkh7         #+#    #+#             */
-/*   Updated: 2023/07/27 13:14:03 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/11 01:04:30 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int	ft_lst_size(t_commandes *lst)
 	int		i;
 	t_commandes	*ptr;
 
+	if (!(lst))
+		return (0);
 	ptr = lst;
 	i = 0;
-	if (!lst)
-		return (0);
 	while (ptr)
 	{
 		ptr = ptr->next;

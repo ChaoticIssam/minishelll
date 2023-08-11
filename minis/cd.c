@@ -6,7 +6,7 @@
 /*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 18:20:35 by buyt_mkh7         #+#    #+#             */
-/*   Updated: 2023/08/03 00:59:45 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/10 06:05:15 by mokhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	t_cd(envar **ev, char **input)
 		}
 		i++;
 	}
+	printf("--->folder %s\n",input[1]);
 	if (!input[1] || !strcmp(input[1], "~"))
 	{
 		while (v)
@@ -100,7 +101,7 @@ void	t_cd(envar **ev, char **input)
 			return ;
 		}
 	}
-	if (chdir(input[1]) != 0)
+	else if (chdir(input[1]) != 0)
 		printf("cd: %s: No such file or directory\n", input[1]);
 	else
 	{

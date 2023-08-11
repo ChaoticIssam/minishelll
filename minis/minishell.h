@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:05:34 by buyt_mkh7         #+#    #+#             */
-/*   Updated: 2023/08/06 21:13:52 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/10 16:49:36 by mokhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 #define MINISHELL_H
 
+#include <string.h>
 # include <dirent.h>
 # include <errno.h>
 # include <fcntl.h>
@@ -20,7 +21,6 @@
 # include <readline/readline.h>
 # include <signal.h>
 # include <stdio.h>
-# include <string.h>
 # include <stdlib.h>
 # include <sys/ioctl.h>
 # include <sys/stat.h>
@@ -39,11 +39,11 @@
 // }					t_global;
 
 // extern t_global		g_global;
-
+//ls >out | wc
 typedef struct s_commandes
 {
-	char				**commande;
-	char				**files;
+	char				**commande;//ls
+	char				**files;//out //1105***
 	struct s_commandes	*next;
 }						t_commandes;
 
@@ -63,7 +63,8 @@ typedef struct s_list
 	struct s_list		*next;
 }	t_list;
 
-typedef struct EnvVar {
+typedef struct EnvVar
+{
     char* value;
     struct EnvVar* next;
 } envar;
@@ -89,6 +90,8 @@ typedef struct s_varint
 	char		*line;
 	int			*fd_rdc;
 	int			nb_h;
+	int			pipe_fd[2];
+	int			pid;
 }				t_varint;
 
 envar	*ft_ls_tnew(char *content);

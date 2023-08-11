@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:57 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/05 21:35:10 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/11 01:19:39 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	**return_file(char *list, char *str, int bool, t_commandes *tmp)
 		i++;
 	while (list[i] == '2' || list[i] == '1')
 		i++;
-	while (list[i] && list[i] != '6')
+	while (i <= ft_strlen(list) && list[i] && list[i] != '6')
 	{
 		i = skip_file_parss(list, i);
 		if (list[i] == '*')

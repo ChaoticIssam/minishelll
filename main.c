@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:37 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/10 16:24:36 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/11 02:35:10 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@ void	ft_read_line(t_main *main)
 {
 	printf("\033[0;31m");
 	main->line = readline("Minishell$ ");
+	printf("read_line ->%s\n", main->line);
 	printf("\033[0m");
 	add_history(main->line);
-	main->m = my_malloc(sizeof(t_commandes));
-	main->tmp = main->m;
 	if (main->line == NULL || !ft_strncmp(main->line, "exit"))
 		exit(0);
-	main->list = toknz_list(main->line, 0, 0);
+	if (main->line)
+	{
+		main->m = my_malloc(sizeof(t_commandes));
+		main->tmp = main->m;
+		main->list = toknz_list(main->line, 0, 0);
+	}
 	printf("list ->%s\n", main->list);
 }
 
@@ -60,8 +64,8 @@ void	print_after_pipe(t_main *main)
 
 int	main(int ac, char **av, char **env)
 {
-	t_main	*main;
-	envar	*ev;
+	t_main *main;
+	envar *ev;
 
 	(void)ac;
 	(void)av;
@@ -75,12 +79,20 @@ int	main(int ac, char **av, char **env)
 		int_sig_main(main);
 		signal(SIGINT, siginthandler);
 		ft_read_line(main);
-		int_main_before(main);
-		check_bill(main->tmp, main->senv, ev);
-		print_before_pipe(main);
-		do_after_pipe(main, ev);
-		multiple_pipe(&main->m, &ev, main->list);
-		free(main->line);
-		re_vars(main);
+		if (*return_commande(main->list, main->line, 1, 0) || *return_file(main->list, main->line, 1, main->tmp))
+		{
+			printf("sss\n");
+			int_main_before(main);
+			check_bill(main->tmp, main->senv, ev);
+			// print_before_pipe(main);
+		}
+			do_after_pipe(main, ev);
+			//printf("%s\n",main->m->files[0]);
+			//printf("%s main->list \n",main->list);
+			// if((main->list != NULL && main->m->commande[0]) || (main->list != NULL && main->m->files[0]))
+			multiple_pipe(&main->m, &ev, main->list);
+			if (main->line)
+				free(main->line);
+			re_vars(main);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:20:53 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/07/23 20:28:23 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/11 01:31:02 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	expand_erreur(char *list)
 	int	i;
 
 	i = 0;
+	if (!list)
+		return (0);
 	while (list[i])
 	{
 		if (((list[i] == '4' || list[i] == '5') && (list[i + 1] == '4' || list[i

@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:17:43 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/04 16:52:43 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/11 01:21:57 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	frst_s_q(char *tknz)
 
 int	frst_q_rex(char *tknz, int start)
 {
-	if (tknz[start - 1] == '1')
+	if (start - 1 >= 0 && tknz[start - 1] == '1')
 	{
 		while (start >= 0)
 		{

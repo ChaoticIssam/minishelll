@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_ncmp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:11:40 by buyt_mkh7         #+#    #+#             */
-/*   Updated: 2023/07/19 10:48:04 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/11 02:05:14 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_str_ncmp(char *s1, char *s2, int n)
 	unsigned char	*j;
 	int				i;
 
+	if (!s1 || !s2)
+		return (-1);
 	k = (unsigned char *)s1;
 	j = (unsigned char *)s2;
 	i = 0;

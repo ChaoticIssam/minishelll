@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 06:50:29 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/07 07:16:52 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/11 01:21:34 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	fill_the_rest2(t_tokenz *m, char *str)
 		m->array[m->j] = '2';
 	else if (str[m->i] == '"')
 	{
-		if (str[m->i - 1] == '=')
+		if (m->i - 1 >= 0 && str[m->i - 1] == '=')
 			m->array[m->j - 1] = '@';
 		dquotes_tokenz(m, str);
 	}
@@ -75,7 +75,7 @@ char	*toknz_list(char *str, int i, int j)
 
 	m = malloc(sizeof(t_tokenz));
 	var_def(m, str, i, j);
-	while (str[m->i] && m->i + 1 <= ft_strlen(str))
+	while (m->i <= ft_strlen(str) && str[m->i])
 	{
 		if (str[m->i] == '>' && str[m->i + 1] == '>')
 			double_redi_tokenz(m, str, '9');
@@ -85,6 +85,6 @@ char	*toknz_list(char *str, int i, int j)
 		m->i++;
 		m->j++;
 	}
-	m->array[m->i] = '\0';
+	// m->array[m->j] = '\0';
 	return (m->array);
 }

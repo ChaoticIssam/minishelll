@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:05:18 by buyt_mkh7         #+#    #+#             */
-/*   Updated: 2023/08/03 11:33:16 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/11 02:39:12 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	exec(envar **ev, char **input)
 	fg = 0;
 	if (!ft_str_ncmp("echo", input[0], 4))
 	{
-		t_echo(&input[1]);
+		//t_echo(&input[1]);
 		fg = 1;
 	}
 	if (!ft_str_ncmp("exit", input[0], 4))

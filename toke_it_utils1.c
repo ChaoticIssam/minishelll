@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:11:32 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/02 16:46:24 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/11 02:15:03 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	redi_tokenz(t_tokenz *m, char *str, char token)
 	plus_plus(m);
 	if (ft_isredi(str[m->i]) || ft_issospecial(str[m->i]))
 		lerreurat(9);
-	while ((ft_isspace(str[m->i]) || ft_isprintbl(str[m->i]))
+	while (m->i <= ft_strlen(str) && (ft_isspace(str[m->i]) || ft_isprintbl(str[m->i]))
 		&& !ft_issospecial(str[m->i]) && str[m->i] && !lock)
 	{
 		if (ft_isspace(str[m->i]))
@@ -83,8 +83,8 @@ void	double_redi_tokenz(t_tokenz *m, char *str, char token)
 	plus_plus(m);
 	if (ft_isredi(str[m->i]) || ft_issospecial(str[m->i]))
 		lerreurat(9);
-	while ((ft_isspace(str[m->i]) || ft_isprintbl(str[m->i]))
-		&& !ft_issospecial(str[m->i]) && str[m->i] && !lock)
+	while (m->i <= ft_strlen(str) && str[m->i] && (ft_isspace(str[m->i]) || ft_isprintbl(str[m->i]))
+		&& !ft_issospecial(str[m->i]) && !lock)
 	{
 		starting(str, m);
 		if (ft_isprintbl(str[m->i]) && !ft_issospecial(str[m->i])

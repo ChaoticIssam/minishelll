@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:13:15 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/07/26 17:03:23 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/11 01:31:53 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	count_pipe(char *list)
 
 	i = 0;
 	count = 0;
+	if (!list)
+		return (0);
 	check_pipe(list);
 	while (list[i])
 	{
