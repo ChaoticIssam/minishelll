@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:15:43 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/07/25 13:48:14 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/12 04:57:18 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int	sec_s_q(char *tknz)
 
 int	sec_q_rex(char *tknz, int end)
 {
-	if ((tknz[end + 1] == '3' || tknz[end + 1] == '0') && tknz[end + 2] != '1')
+	if (end <= ft_strlen(tknz) && (tknz[end + 1] == '3' || tknz[end + 1] == '0') && tknz[end + 2] != '1')
 		return (end + 1);
-	if (tknz[end + 1] == '1')
+	if (end <= ft_strlen(tknz) && tknz[end + 1] == '1')
 	{
 		while (tknz[end])
 		{

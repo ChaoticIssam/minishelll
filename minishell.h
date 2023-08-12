@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:49 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/07 07:11:24 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/12 04:43:39 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ typedef struct EnvVar
 	char				*value;
 	struct EnvVar		*next;
 }						envar;
+
+typedef struct global
+{
+	int					exit_status;
+	int					readline;
+	int					child;
+	int					heredoc;
+}						t_global;
+
+extern t_global		g;
 
 typedef struct s_mal
 {
@@ -271,5 +281,7 @@ void					ft_memset(void *pointer, int c, size_t len);
 void					*ft_memcpy(void *destination, void *source, size_t len);
 envar					*get_env(envar *head, char **env);
 void					multiple_pipe(t_commandes **c, envar **ev, char *list);
+
+char					*ft_itoa(int n);
 
 #endif

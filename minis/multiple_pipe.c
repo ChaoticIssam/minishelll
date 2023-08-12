@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 03:00:00 by mokhalil          #+#    #+#             */
-/*   Updated: 2023/08/11 03:25:00 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/12 02:21:56 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -300,10 +300,7 @@ void	heredoc(t_commandes **c, t_varint *l, char *list)
 							}
 						}
 						if (k)
-						{
-							//printf("haa k asidi %s\n",k);
 							free(k);
-						}
 						exit(0);
 					}
 					if (i == 0)

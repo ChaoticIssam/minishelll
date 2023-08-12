@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokhalil <mokhalil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:05:34 by buyt_mkh7         #+#    #+#             */
-/*   Updated: 2023/08/10 16:49:36 by mokhalil         ###   ########.fr       */
+/*   Updated: 2023/08/12 04:40:24 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,6 @@
 # include <termios.h>
 # include <unistd.h>
 # include "../minishell.h"
-
-// typedef struct global
-// {
-// 	int				exit_status;
-// 	int				readline;
-// 	int				child;
-// 	int				heredoc;
-// }					t_global;
 
 // extern t_global		g_global;
 //ls >out | wc

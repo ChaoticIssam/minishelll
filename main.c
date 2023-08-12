@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:37 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/11 02:35:10 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/12 04:51:10 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int	main(int ac, char **av, char **env)
 		ft_read_line(main);
 		if (*return_commande(main->list, main->line, 1, 0) || *return_file(main->list, main->line, 1, main->tmp))
 		{
-			printf("sss\n");
 			int_main_before(main);
 			check_bill(main->tmp, main->senv, ev);
 			// print_before_pipe(main);
@@ -89,7 +88,6 @@ int	main(int ac, char **av, char **env)
 			do_after_pipe(main, ev);
 			//printf("%s\n",main->m->files[0]);
 			//printf("%s main->list \n",main->list);
-			// if((main->list != NULL && main->m->commande[0]) || (main->list != NULL && main->m->files[0]))
 			multiple_pipe(&main->m, &ev, main->list);
 			if (main->line)
 				free(main->line);

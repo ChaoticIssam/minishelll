@@ -2,7 +2,7 @@ NAME = Minishell
 CC = cc
 RM = rm -f
 LIBS = -lreadline -L/Users/iszitoun/goinfre/Homebrew/Cellar/readline/8.2.1/lib
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3 -I /Users/iszitoun/goinfre/Homebrew/Cellar/readline/8.2.1/include
+CFLAGS = -Wall -Wextra -Werror -I /Users/iszitoun/goinfre/Homebrew/Cellar/readline/8.2.1/include
 src = main.c\
 		utils.c\
 		parssing.c\
@@ -28,6 +28,7 @@ src = main.c\
 		my_malloc.c\
 		my_malloc_utils.c\
 		env_parss.c\
+		ft_itoa.c\
 		error.c\
 		./minis/exec.c\
 		./minis/pwd.c\
