@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 06:50:29 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/11 01:21:34 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 05:34:15 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	fill_the_rest2(t_tokenz *m, char *str)
 		squotes_tokenz(m, str);
 	}
 	else if (str[m->i] == '=' && str[m->i + 1] != ' ')
-		m->array[m->j] = '@';
+		for_aro_tok(m, str);
 	else if (str[m->i])
 		m->array[m->j] = '1';
 }
@@ -85,6 +85,5 @@ char	*toknz_list(char *str, int i, int j)
 		m->i++;
 		m->j++;
 	}
-	// m->array[m->j] = '\0';
 	return (m->array);
 }

@@ -6,12 +6,14 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 10:28:40 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/12 05:22:28 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 05:48:16 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-t_global g;
+
+t_global	g_g;
+
 void	re_vars(t_main *main)
 {
 	main->i = 0;
@@ -26,7 +28,7 @@ void	done_normal(t_commandes *tmp, t_env *senv, envar *env, t_bill *bill)
 	if (senv->var[0] == '?')
 	{
 		free(tmp->commande[bill->i]);
-		tmp->commande[bill->i] = ft_itoa(g.exit_status);
+		tmp->commande[bill->i] = ft_itoa(g_g.exit_status);
 	}
 	if (senv->path != NULL)
 	{

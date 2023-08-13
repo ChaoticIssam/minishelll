@@ -14,6 +14,7 @@ src = main.c\
 		parssing_utils.c\
 		parssing_utils1.c\
 		parssing_utils2.c\
+		parssing_utils2_1.c\
 		parssing_utils3.c\
 		parssing_utils4.c\
 		parssing_utils5.c\

@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 17:04:58 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/11 01:25:08 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 05:48:06 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	count_it(char *list, t_count *c, int i)
 		i = for_q(list, c, list[i], i);
 	if (i <= ft_strlen(list) && list[i] == '0')
 		i = for_q(list, c, list[i], i);
-	if (i <= ft_strlen(list) && list[i] == '1' && (list[i + 1] == '2' || !list[i + 1])
-		&& list[i] != '6')
+	if (i <= ft_strlen(list) && list[i] == '1' && (list[i + 1] == '2' || !list[i
+				+ 1]) && list[i] != '6')
 		c->count++;
 	if (i <= ft_strlen(list) && list[i] == '1' && list[i + 1] >= 52)
 		c->count++;

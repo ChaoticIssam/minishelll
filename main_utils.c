@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 10:26:12 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/11 02:35:15 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 05:45:53 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	int_main(t_main *main)
 	main->term2 = main->term;
 }
 
-void	int_main_before(t_main *main)
+void	int_main_before(t_main *main, envar *ev)
 {
-		printf("return -> %s\n", return_commande(main->list, main->line, 1, 0)[0]);
-		main->m->commande = return_commande(main->list, main->line, 1, 0);
-		main->m->files = return_file(main->list, main->line, 1, main->tmp);
-		main->m->next = NULL;
+	main->m->commande = return_commande(main->list, main->line, 1, 0);
+	main->m->files = return_file(main->list, main->line, 1, main->tmp);
+	main->m->next = NULL;
+	check_bill(main->tmp, main->senv, ev);
 }
 
 void	int_main_after(t_main *main)
@@ -54,7 +54,6 @@ void	do_after_pipe(t_main *main, envar *ev)
 	{
 		int_main_after(main);
 		check_bill(main->tmp, main->senv, ev);
-		// print_after_pipe(main);
 		main->i++;
 	}
 }

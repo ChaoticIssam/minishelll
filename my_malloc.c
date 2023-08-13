@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:12:58 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/04 16:00:34 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 05:38:08 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_mal	*head(void)
 	}
 	return (&curr);
 }
+
 int	get_available_pos(void)
 {
 	t_mal	*curr;

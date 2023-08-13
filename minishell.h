@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:49 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/12 04:43:39 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 05:42:58 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct global
 	int					heredoc;
 }						t_global;
 
-extern t_global		g;
+extern t_global			g_g;
 
 typedef struct s_mal
 {
@@ -168,7 +168,7 @@ t_files					*ft_lstlast_files(t_files *lst);
 t_files					*ft_lstnew_files(void *content);
 
 void					int_main(t_main *main);
-void					int_main_before(t_main *main);
+void					int_main_before(t_main *main, envar *ev);
 void					int_main_after(t_main *main);
 void					print_after_pipe(t_main *main);
 void					do_after_pipe(t_main *main, envar *ev);
@@ -283,5 +283,9 @@ envar					*get_env(envar *head, char **env);
 void					multiple_pipe(t_commandes **c, envar **ev, char *list);
 
 char					*ft_itoa(int n);
+int						end_if_aro(t_commande *s, int i, char *list);
+int						initcount(int bool, int j);
+int						is_pss(char c);
+void					for_aro_tok(t_tokenz *m, char *str);
 
 #endif

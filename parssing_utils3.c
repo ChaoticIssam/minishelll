@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 11:56:04 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/11 01:35:45 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 05:26:28 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	starting_parss(char *list, int i, int c)
 
 void	start_stop(char *list, t_commande *s, int i)
 {
-	if (i + 1 <= ft_strlen(list) && ((list[i] != s->tmp) || list[i + 1] == '6' || !list[i + 1])
-		&& !ft_isredi(list[i]))
+	if (i + 1 <= ft_strlen(list) && ((list[i] != s->tmp) || list[i + 1] == '6'
+			|| !list[i + 1]) && !ft_isredi(list[i]))
 		get_end(s, i, list);
-	if ((list[i] == '1') && list[i] != '3' && list[i] != '2' && s->lock && list[i + 1]
-		&& !ft_isredi(list[i]))
+	if ((list[i] == '1') && list[i] != '3' && list[i] != '2' && s->lock
+		&& list[i + 1] && !ft_isredi(list[i]))
 		get_start(s, i, list);
 	if (i != 0 && i + 1 <= ft_strlen(list) && list[i] == '1' && list[i
 			- 1] == '2' && !list[i + 1] && !ft_isredi(list[i]))
@@ -60,7 +60,8 @@ void	rest_of_parss(char *list, char *str, t_commande *s, int i)
 	if (!list)
 		return ;
 	if (list[i] && !s->lock1 && list[i] != '3' && str[s->start] != '"'
-		&& str[s->start] != '\'' && str[s->start] != ' ' && s->end >= s->start && !ft_isredi(list[i]))
+		&& str[s->start] != '\'' && str[s->start] != ' ' && s->end >= s->start
+		&& !ft_isredi(list[i]))
 		get_commande(s, str);
 	if (list[i] == '2' && list[i + 1] == '2' && !ft_isredi(list[i]))
 		skip_sp(s, list, i);
@@ -75,10 +76,7 @@ int	count_ptr(char *list, int bool)
 	if (!list)
 		return (0);
 	c = my_malloc(sizeof(t_count));
-	if (bool == 1)
-		i = 0;
-	if (bool == 0)
-		i = j;
+	i = initcount(bool, j);
 	init_count_vars(list, c);
 	while (list[i] && list[i] == '2')
 		i++;
@@ -94,5 +92,6 @@ int	count_ptr(char *list, int bool)
 		}
 		i++;
 	}
+	printf("%d\n", c->count);
 	return (c->count);
 }
