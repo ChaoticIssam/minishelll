@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:20:53 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/11 01:31:02 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 18:43:44 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	expand_erreur(char *list)
 	while (list[i])
 	{
 		if (((list[i] == '4' || list[i] == '5') && (list[i + 1] == '4' || list[i
-						+ 1] == '5')))
+					+ 1] == '5')))
 			lerreurat(9);
 		i++;
 	}
@@ -45,18 +45,18 @@ int	lerreurat(int error)
 {
 	if (error == 3)
 	{
-		printf("ERROR QUOTES!\n");
-		exit(0);
+		write(2, "ERROR QUOTES!\n", 14);
+		return (3);
 	}
 	if (error == 6)
 	{
-		printf("ERROR PIPE!\n");
-		exit(0);
+		write(2, "ERROR PIPE!\n", 13);
+		return (6);
 	}
 	if (error == 9)
 	{
-		printf("ERROR REDIRECTION!\n");
-		exit(0);
+		write(2, "ERROR REDIRECTION!\n", 21);
+		return (9);
 	}
 	return (0);
 }

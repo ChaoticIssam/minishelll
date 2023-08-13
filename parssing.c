@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:57 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/11 01:19:39 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 18:49:39 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char	*quotes_quotes(char *str, char *tknz, int start)
 			parss_quotes(str, tknz, q, tknz[q->i + 1]);
 		if (tknz[q->i] == '1' || tknz[q->i] == '-')
 			fill_between_q(str, q);
-		if (!tknz[q->i] || tknz[q->i] == '2' || tknz[q->i] == '6')
+		if (!tknz[q->i] || tknz[q->i] == '6' || ((tknz[q->i] == '3' || tknz[q->i] == '0') && !tknz[q->i + 1]))
 		{
 			q->ptr[q->j] = '\0';
 			return (q->ptr);

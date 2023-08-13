@@ -6,7 +6,7 @@
 /*   By: iszitoun <iszitoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:58:49 by iszitoun          #+#    #+#             */
-/*   Updated: 2023/08/13 05:42:58 by iszitoun         ###   ########.fr       */
+/*   Updated: 2023/08/13 18:42:08 by iszitoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -287,5 +287,11 @@ int						end_if_aro(t_commande *s, int i, char *list);
 int						initcount(int bool, int j);
 int						is_pss(char c);
 void					for_aro_tok(t_tokenz *m, char *str);
+
+char					*store_var(t_commandes *tmp, t_bill *bill);
+envar					*go_last(envar *env);
+void					ft_lstadd_back_var(envar **lst, envar *new);
+envar					*ft_lstlast_var(envar *lst);
+envar					*ft_lstnew_var(void *content);
 
 #endif
